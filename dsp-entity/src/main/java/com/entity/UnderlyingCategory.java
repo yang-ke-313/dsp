@@ -3,12 +3,10 @@ package com.entity;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * @author 杨可
- */
-public class TopCategory implements Serializable {
+public class UnderlyingCategory implements Serializable {
     private Integer id;
     private String title;
+    private Integer cate1_id;
     private Integer level;
     private Date time_create;
     private Date time_modified;
@@ -27,6 +25,14 @@ public class TopCategory implements Serializable {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Integer getCate1_id() {
+        return cate1_id;
+    }
+
+    public void setCate1_id(Integer cate1_id) {
+        this.cate1_id = cate1_id;
     }
 
     public Integer getLevel() {
@@ -55,9 +61,10 @@ public class TopCategory implements Serializable {
 
     @Override
     public String toString() {
-        return "TopCategory{" +
+        return "UnderlyingCategory{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
+                ", cate1_id=" + cate1_id +
                 ", level=" + level +
                 ", time_create=" + time_create +
                 ", time_modified=" + time_modified +
