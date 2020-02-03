@@ -1,17 +1,16 @@
 package com.entity;
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * @author 杨可
+ * 一级分类实体类
  */
 public class TopCategory implements Serializable {
+
     private Integer id;
     private String title;
     private Integer level;
-    private Date time_create;
-    private Date time_modified;
 
     public Integer getId() {
         return id;
@@ -37,30 +36,12 @@ public class TopCategory implements Serializable {
         this.level = level;
     }
 
-    public Date getTime_create() {
-        return time_create;
-    }
-
-    public void setTime_create(Date time_create) {
-        this.time_create = time_create;
-    }
-
-    public Date getTime_modified() {
-        return time_modified;
-    }
-
-    public void setTime_modified(Date time_modified) {
-        this.time_modified = time_modified;
-    }
-
     @Override
     public String toString() {
         return "TopCategory{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", level=" + level +
-                ", time_create=" + time_create +
-                ", time_modified=" + time_modified +
                 '}';
     }
 }

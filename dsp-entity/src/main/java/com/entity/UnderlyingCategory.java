@@ -1,15 +1,17 @@
 package com.entity;
 
 import java.io.Serializable;
-import java.util.Date;
 
+/**
+ * @author 杨可
+ * 二级分类实体类
+ */
 public class UnderlyingCategory implements Serializable {
+
     private Integer id;
     private String title;
     private Integer cate1_id;
     private Integer level;
-    private Date time_create;
-    private Date time_modified;
 
     public Integer getId() {
         return id;
@@ -41,33 +43,5 @@ public class UnderlyingCategory implements Serializable {
 
     public void setLevel(Integer level) {
         this.level = level;
-    }
-
-    public Date getTime_create() {
-        return time_create;
-    }
-
-    public void setTime_create(Date time_create) {
-        this.time_create = time_create;
-    }
-
-    public Date getTime_modified() {
-        return time_modified;
-    }
-
-    public void setTime_modified(Date time_modified) {
-        this.time_modified = time_modified;
-    }
-
-    @Override
-    public String toString() {
-        return "UnderlyingCategory{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", cate1_id=" + cate1_id +
-                ", level=" + level +
-                ", time_create=" + time_create +
-                ", time_modified=" + time_modified +
-                '}';
     }
 }

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE mapper
+                PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.mapper.CategoryMapper">
+
+    <resultMap id="topcategory" type="com.entity.TopCategory">
+        <id property="id" column="id"></id>
+        <result property="title" column="title"></result>
+        <result property="level" column="level"></result>
+    </resultMap>
+
+    <resultMap id="underlyingcategory" type="com.entity.UnderlyingCategory">
+        <id property="id" column="id"></id>
+        <result property="title" column="title"></result>
+        <result property="cate1_id" column="cate1_id"></result>
+        <result property="level" column="level"></result>
+    </resultMap>
+
+    <!--查询所有一级分类-->
+    <select id="getAllTopCategory" resultMap="topcategory">
+        select * from category_1
+    </select>
+
+    <!--增加一个一级分类-->
+    <insert id="saveTopCategory" parameterType="com.entity.TopCategory">
+        insert into category_1(id,title,level)values(#{id},#{title},#{level})
+    </insert>
+
+    <!--根据id删除一个一级分类-->
+    <delete id="deleteTopCategory" parameterType="INT">
+        delete from user where id=#{id}
+    </delete>
+
+    <!--更改一个一级分类-->
+    <update id="updateTopCategory" parameterType="com.entity.TopCategory">
+        update category_1 set id=#{id},title=#{title},level=#{level}
+    </update>
+
+    <!--查询所有二级分类-->
+    <select id="getAllUnderlyingCategory" resultMap="underlyingcategory">
+    select * from category_2
+    </select>
+
+    <!--根据id查询二级分类-->
+    <select id="findByCate1Id" resultMap="underlyingcategory">
+    select * from category_2 where cate1_id = #{cate1_id}
+    </select>
+
+</mapper>
