@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service;
 public class CategoryService {
 
     @Autowired
-    private CategoryMapper mapperUnderlying;
+    private CategoryMapper mapper;
 
     public CategoryMapper getMapper(){
-        return mapperUnderlying;
+        return mapper;
     }
 
 }
